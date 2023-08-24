@@ -4085,7 +4085,6 @@ spec:
         - name: upgrade-ipam
           image: docker.io/calico/cni:v3.21.2
                 securityContext:
-	runAsUser: 10000
         runAsNonRoot: true  
         readOnlyRootFilesystem: true 
         allowPrivilegeEscalation: falsen
@@ -4176,7 +4175,6 @@ spec:
         - name: calico-node
           image: docker.io/calico/node:v3.21.2
                 securityContext:
-	runAsUser: 10000
         runAsNonRoot: true  
         readOnlyRootFilesystem: true 
         allowPrivilegeEscalation: falsen
@@ -4406,18 +4404,17 @@ spec:
       containers:
         - name: calico-kube-controllers
           image: docker.io/calico/kube-controllers:v3.21.2
-                securityContext:
-	runAsUser: 10000
-        runAsNonRoot: true  
-        readOnlyRootFilesystem: true 
-        allowPrivilegeEscalation: falsen
-        capabilities:
-          drop: ["ALL"]  # Drop all capabilities
-          add: ["NET_BIND_SERVICE", "CAP_NAME"
-        seLinuxOptions:
-          level: s0:c123,c456
-        windowsOptions:
-          gmsaCredentialSpecName: "your-credential-spec" 
+        securityContext:
+	        runAsNonRoot: true  
+	        readOnlyRootFilesystem: true 
+	        allowPrivilegeEscalation: falsen
+	        capabilities:
+	          drop: ["ALL"]  # Drop all capabilities
+	          add: ["NET_BIND_SERVICE", "CAP_NAME"
+	        seLinuxOptions:
+	          level: s0:c123,c456
+	        windowsOptions:
+	          gmsaCredentialSpecName: "your-credential-spec" 
           env:
             # Choose which controllers to run.
             - name: ENABLED_CONTROLLERS
