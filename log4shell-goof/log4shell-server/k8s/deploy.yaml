@@ -23,8 +23,17 @@ spec:
     spec:
       containers:
         - name: ldap
-          image: ${DOCKER_ACCOUNT}/log4shell-server:latest
-          imagePullPolicy: Always
+          image: nginx:latest
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: "256Mi"
+            requests:
+              memory: "128Mi"
+          securityContext:
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
 ---
 apiVersion: v1
 kind: Service
@@ -38,6 +47,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8000
+  type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
@@ -51,4 +61,4 @@ spec:
     - protocol: TCP
       port: 9999
       targetPort: 9999
-
+  type: ClusterIP
