@@ -4108,10 +4108,7 @@ spec:
 	      runAsUser: 10000
 	      runAsNonRoot: true  
 	      readOnlyRootFilesystem: true 
-	      allowPrivilegeEscalation: false  # Typo: Should be 'false' instead of 'falsen'
-       	  capabilities:
-	      drop: ["ALL"]
-	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
+	      allowPrivilegeEscalation: false
         # This container installs the CNI binaries
         # and CNI network config file on each node.
         - name: install-cni
@@ -4155,10 +4152,7 @@ spec:
 	      runAsUser: 10000
 	      runAsNonRoot: true  
 	      readOnlyRootFilesystem: true 
-	      allowPrivilegeEscalation: false  # Typo: Should be 'false' instead of 'falsen'
-       	  capabilities:
-	      drop: ["ALL"]
-	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
+	      allowPrivilegeEscalation: false
         # Adds a Flex Volume Driver that creates a per-pod Unix Domain Socket to allow Dikastes
         # to communicate with Felix over the Policy Sync API.
         - name: flexvol-driver
@@ -4170,10 +4164,7 @@ spec:
 	      runAsUser: 10000
 	      runAsNonRoot: true  
 	      readOnlyRootFilesystem: true 
-	      allowPrivilegeEscalation: false  # Typo: Should be 'false' instead of 'falsen'
-       	  capabilities:
-	      drop: ["ALL"]
-	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
+	      allowPrivilegeEscalation: false
       containers:
         # Runs calico-node container on each Kubernetes node. This
         # container programs network policy and routes on each
@@ -4253,10 +4244,7 @@ spec:
 	      runAsUser: 10000
 	      runAsNonRoot: true  
 	      readOnlyRootFilesystem: true 
-	      allowPrivilegeEscalation: false  # Typo: Should be 'false' instead of 'falsen'
-       	  capabilities:
-	      drop: ["ALL"]
-	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
+	      allowPrivilegeEscalation: false
           resources:
             requests:
               cpu: 250m
@@ -4409,10 +4397,7 @@ spec:
 	      runAsUser: 10000
 	      runAsNonRoot: true  
 	      readOnlyRootFilesystem: true 
-	      allowPrivilegeEscalation: false  # Typo: Should be 'false' instead of 'falsen'
-       	  capabilities:
-	      drop: ["ALL"]
-	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
+	      allowPrivilegeEscalation: false
           env:
             # Choose which controllers to run.
             - name: ENABLED_CONTROLLERS
