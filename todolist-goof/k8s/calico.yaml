@@ -4112,10 +4112,6 @@ spec:
        	  capabilities:
 	      drop: ["ALL"]
 	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
-	  seLinuxOptions:
-	      level: s0:c123,c456
-	  windowsOptions:
-	      gmsaCredentialSpecName: "your-credential-spec" 
         # This container installs the CNI binaries
         # and CNI network config file on each node.
         - name: install-cni
@@ -4163,10 +4159,6 @@ spec:
        	  capabilities:
 	      drop: ["ALL"]
 	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
-	  seLinuxOptions:
-	      level: s0:c123,c456
-	  windowsOptions:
-	      gmsaCredentialSpecName: "your-credential-spec" 
         # Adds a Flex Volume Driver that creates a per-pod Unix Domain Socket to allow Dikastes
         # to communicate with Felix over the Policy Sync API.
         - name: flexvol-driver
@@ -4182,10 +4174,6 @@ spec:
        	  capabilities:
 	      drop: ["ALL"]
 	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
-	  seLinuxOptions:
-	      level: s0:c123,c456
-	  windowsOptions:
-	      gmsaCredentialSpecName: "your-credential-spec" 
       containers:
         # Runs calico-node container on each Kubernetes node. This
         # container programs network policy and routes on each
@@ -4269,10 +4257,6 @@ spec:
        	  capabilities:
 	      drop: ["ALL"]
 	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
-	  seLinuxOptions:
-	      level: s0:c123,c456
-	  windowsOptions:
-	      gmsaCredentialSpecName: "your-credential-spec" 
           resources:
             requests:
               cpu: 250m
@@ -4429,10 +4413,6 @@ spec:
        	  capabilities:
 	      drop: ["ALL"]
 	      add: ["NET_BIND_SERVICE", "CAP_NAME"]  # Missing closing square bracket
-	  seLinuxOptions:
-	      level: s0:c123,c456
-	  windowsOptions:
-	      gmsaCredentialSpecName: "your-credential-spec" 
           env:
             # Choose which controllers to run.
             - name: ENABLED_CONTROLLERS
